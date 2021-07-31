@@ -11,7 +11,7 @@ import io.cucumber.java.en.Then;
 public class LoginStepDefinitions {
     @Given("navigate login page")
     public void navigate_login_page() throws InterruptedException {
-        System.out.println("I open browser and navigate to vytrack login page");
+        System.out.println("I open browser and navigate to Zero Bank login page");
         String url = ConfigurationReader.get("url");
         Driver.get().get(url); // navigating to the webpage
     }
