@@ -17,4 +17,13 @@ public class AccountActivityNavigationPage extends BasePage{
     @FindBy(linkText = "Brokerage")   // It represents driver.findElement method
     public WebElement BrokerageText;
 
+    @FindBy(linkText = "Checking")   // It represents driver.findElement method
+    public WebElement CheckingText;
+
+    @FindBy(linkText = "Credit Card")   // It represents driver.findElement method
+    public WebElement creditCardText;
+
+    @FindBy(linkText = "Loan")   // It represents driver.findElement method
+    public WebElement loanText;
+
 }

@@ -34,7 +34,8 @@ public abstract class BasePage {
 
     public void navigateToModule(String tab) {
         // MAKE SURE THAT GİVE ENOUGH TİME TO WAIT
-        String tabLocator = tab + "_tab";
+
+        String tabLocator = tab.toLowerCase().replace(" ", "_") + "_tab";
         try {
             BrowserUtils.waitForClickablility(By.id(tabLocator), 5);
             WebElement tabElement = Driver.get().findElement(By.id(tabLocator));
@@ -43,6 +44,10 @@ public abstract class BasePage {
             BrowserUtils.clickWithWait(By.id(tabLocator), 5);
         }
 
+    }
+
+    public void navigateToTab(WebElement element){
+        new Actions(Driver.get()).moveToElement(element).pause(200).doubleClick(element).build().perform();
     }
 
 

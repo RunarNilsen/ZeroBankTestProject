@@ -3,27 +3,27 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2021-07-27T22:51:38.803Z",
+        "start_timestamp": "2021-07-31T16:58:47.809Z",
         "before": [
           {
             "result": {
-              "duration": 3219830000,
-              "status": "passed"
+              "duration": 1031000,
+              "status": "skipped"
             },
             "match": {
               "location": "com.zerobank.stepdefinitions.Hooks.setUp()"
             }
           }
         ],
-        "line": 11,
-        "name": "Brokerage account redirect",
+        "line": 42,
+        "name": "Type",
         "description": "",
-        "id": "navigating-to-specific-accounts-in-accounts-activity;brokerage-account-redirect",
+        "id": "find-transactions-in-account-activity;type",
         "after": [
           {
             "result": {
-              "duration": 185348000,
-              "status": "passed"
+              "duration": 36000,
+              "status": "skipped"
             },
             "match": {
               "location": "com.zerobank.stepdefinitions.Hooks.tearDown(io.cucumber.java.Scenario)"
@@ -35,10 +35,10 @@
         "steps": [
           {
             "result": {
-              "duration": 1051391000,
-              "status": "passed"
+              "duration": 1674000,
+              "status": "skipped"
             },
-            "line": 12,
+            "line": 43,
             "name": "navigate login page",
             "match": {
               "location": "com.zerobank.stepdefinitions.LoginStepDefinitions.navigate_login_page()"
@@ -47,10 +47,10 @@
           },
           {
             "result": {
-              "duration": 1355404000,
-              "status": "passed"
+              "duration": 1096000,
+              "status": "skipped"
             },
-            "line": 13,
+            "line": 44,
             "name": "the user is logged in",
             "match": {
               "location": "com.zerobank.stepdefinitions.LoginStepDefinitions.the_user_is_logged_in()"
@@ -59,45 +59,99 @@
           },
           {
             "result": {
-              "duration": 3823462000,
-              "status": "passed"
+              "duration": 1009000,
+              "status": "skipped"
             },
-            "line": 14,
-            "name": "the user clicks on Brokerage link on the Account Summary page",
+            "line": 45,
+            "name": "the user accesses the Find Transactions tab",
             "match": {
-              "location": "com.zerobank.stepdefinitions.AccountActivityNavigationStepDefinitions.the_user_clicks_on_Brokerage_link_on_the_Account_Summary_page()"
+              "location": "com.zerobank.stepdefinitions.FindTransactionsStepDefinitions.theUserAccessesTheFindTransactionsTab()"
             },
-            "keyword": "When "
+            "keyword": "Given "
           },
           {
             "result": {
-              "duration": 30429000,
-              "status": "passed"
+              "duration": 933000,
+              "status": "skipped"
             },
-            "line": 15,
-            "name": "the Account Activity page should be displayed",
+            "line": 46,
+            "name": "clicks search",
             "match": {
-              "location": "com.zerobank.stepdefinitions.AccountActivityNavigationStepDefinitions.the_Account_Activity_page_should_be_displayed()"
+              "location": "com.zerobank.stepdefinitions.FindTransactionsStepDefinitions.clicksSearch()"
             },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "line": 47,
+            "name": "results table should show at least one result under \"Deposit\"",
+            "match": {},
             "keyword": "Then "
           },
           {
             "result": {
-              "duration": 152209000,
-              "status": "passed"
+              "status": "undefined"
             },
-            "line": 16,
-            "name": "Account drop down should have selected \"Brokerage\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"Brokerage\"",
-                  "offset": 39
-                }
-              ],
-              "location": "com.zerobank.stepdefinitions.AccountActivityNavigationStepDefinitions.account_drop_down_should_have_selected(java.lang.String)"
+            "line": 48,
+            "name": "results table should show at least one result under \"Withdrawal\"",
+            "match": {},
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "undefined"
             },
-            "keyword": "And "
+            "line": 49,
+            "name": "user selects type \"Deposit\"",
+            "match": {},
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "line": 50,
+            "name": "results table should show at least one result under \"Deposit\"",
+            "match": {},
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "line": 51,
+            "name": "results table should show no result under \"Withdrawal\"",
+            "match": {},
+            "keyword": "But "
+          },
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "line": 52,
+            "name": "user selects type \"Withdrawal\"",
+            "match": {},
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "line": 53,
+            "name": "results table should show at least one result under \"Withdrawal\"",
+            "match": {},
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "line": 54,
+            "name": "results table should show no result under \"Deposit\"",
+            "match": {},
+            "keyword": "But "
           }
         ],
         "tags": [
@@ -107,11 +161,11 @@
         ]
       }
     ],
-    "name": "Navigating to specific accounts in Accounts Activity",
+    "name": "Find Transactions in Account Activity",
     "description": "",
-    "id": "navigating-to-specific-accounts-in-accounts-activity",
+    "id": "find-transactions-in-account-activity",
     "keyword": "Feature",
-    "uri": "file:src/test/resources/features/AccountActivityNavigation.feature",
+    "uri": "file:src/test/resources/features/FindTransactions.feature",
     "tags": []
   }
 ]

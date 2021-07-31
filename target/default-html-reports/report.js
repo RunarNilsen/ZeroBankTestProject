@@ -1,11 +1,11 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("file:src/test/resources/features/AccountActivityNavigation.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("file:src/test/resources/features/FindTransactions.feature");
 formatter.feature({
-  "name": "Navigating to specific accounts in Accounts Activity",
+  "name": "Find Transactions in Account Activity",
   "description": "",
   "keyword": "Feature"
 });
 formatter.scenario({
-  "name": "Brokerage account redirect",
+  "name": "Type",
   "description": "",
   "keyword": "Scenario",
   "tags": [
@@ -15,7 +15,7 @@ formatter.scenario({
   ]
 });
 formatter.before({
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.step({
   "name": "navigate login page",
@@ -25,7 +25,7 @@ formatter.match({
   "location": "com.zerobank.stepdefinitions.LoginStepDefinitions.navigate_login_page()"
 });
 formatter.result({
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.step({
   "name": "the user is logged in",
@@ -35,39 +35,93 @@ formatter.match({
   "location": "com.zerobank.stepdefinitions.LoginStepDefinitions.the_user_is_logged_in()"
 });
 formatter.result({
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.step({
-  "name": "the user clicks on Brokerage link on the Account Summary page",
-  "keyword": "When "
+  "name": "the user accesses the Find Transactions tab",
+  "keyword": "Given "
 });
 formatter.match({
-  "location": "com.zerobank.stepdefinitions.AccountActivityNavigationStepDefinitions.the_user_clicks_on_Brokerage_link_on_the_Account_Summary_page()"
+  "location": "com.zerobank.stepdefinitions.FindTransactionsStepDefinitions.theUserAccessesTheFindTransactionsTab()"
 });
 formatter.result({
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.step({
-  "name": "the Account Activity page should be displayed",
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "com.zerobank.stepdefinitions.AccountActivityNavigationStepDefinitions.the_Account_Activity_page_should_be_displayed()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "Account drop down should have selected \"Brokerage\"",
+  "name": "clicks search",
   "keyword": "And "
 });
 formatter.match({
-  "location": "com.zerobank.stepdefinitions.AccountActivityNavigationStepDefinitions.account_drop_down_should_have_selected(java.lang.String)"
+  "location": "com.zerobank.stepdefinitions.FindTransactionsStepDefinitions.clicksSearch()"
 });
 formatter.result({
-  "status": "passed"
+  "status": "skipped"
+});
+formatter.step({
+  "name": "results table should show at least one result under \"Deposit\"",
+  "keyword": "Then "
+});
+formatter.match({});
+formatter.result({
+  "status": "undefined"
+});
+formatter.step({
+  "name": "results table should show at least one result under \"Withdrawal\"",
+  "keyword": "Then "
+});
+formatter.match({});
+formatter.result({
+  "status": "undefined"
+});
+formatter.step({
+  "name": "user selects type \"Deposit\"",
+  "keyword": "When "
+});
+formatter.match({});
+formatter.result({
+  "status": "undefined"
+});
+formatter.step({
+  "name": "results table should show at least one result under \"Deposit\"",
+  "keyword": "Then "
+});
+formatter.match({});
+formatter.result({
+  "status": "undefined"
+});
+formatter.step({
+  "name": "results table should show no result under \"Withdrawal\"",
+  "keyword": "But "
+});
+formatter.match({});
+formatter.result({
+  "status": "undefined"
+});
+formatter.step({
+  "name": "user selects type \"Withdrawal\"",
+  "keyword": "When "
+});
+formatter.match({});
+formatter.result({
+  "status": "undefined"
+});
+formatter.step({
+  "name": "results table should show at least one result under \"Withdrawal\"",
+  "keyword": "Then "
+});
+formatter.match({});
+formatter.result({
+  "status": "undefined"
+});
+formatter.step({
+  "name": "results table should show no result under \"Deposit\"",
+  "keyword": "But "
+});
+formatter.match({});
+formatter.result({
+  "status": "undefined"
 });
 formatter.after({
-  "status": "passed"
+  "status": "skipped"
 });
 });

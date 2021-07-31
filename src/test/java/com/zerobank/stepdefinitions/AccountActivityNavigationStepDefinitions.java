@@ -32,6 +32,8 @@ public class AccountActivityNavigationStepDefinitions{
         Select dropDown = new Select(activityPage.dropdownMenu);
         String selected = dropDown.getFirstSelectedOption().getText();
         String expected = expectedText;
+        System.out.println("expected = " + expected);
+        System.out.println("selected = " + selected);
         Assert.assertEquals(expected,selected);
 
     }
@@ -42,5 +44,28 @@ public class AccountActivityNavigationStepDefinitions{
         accActivityPage.BrokerageText.click();
         BrowserUtils.waitFor(3);
     }
+
+    @When("the user clicks on Checking link on the Account Summary page")
+    public void the_user_clicks_on_Checking_link_on_the_Account_Summary_page() {
+        AccountActivityNavigationPage accActivityPage = new AccountActivityNavigationPage();
+        accActivityPage.CheckingText.click();
+        BrowserUtils.waitFor(2);
+    }
+
+    @When("the user clicks on Credit Card link on the Account Summary page")
+    public void the_user_clicks_on_Credit_Card_link_on_the_Account_Summary_page() {
+        AccountActivityNavigationPage accActivityPage = new AccountActivityNavigationPage();
+        accActivityPage.creditCardText.click();
+        BrowserUtils.waitFor(2);
+    }
+
+
+    @When("the user clicks on Loan link on the Account Summary page")
+    public void theUserClicksOnLoanLinkOnTheAccountSummaryPage() {
+        AccountActivityNavigationPage accountActivityPage = new AccountActivityNavigationPage();
+        accountActivityPage.loanText.click();
+        BrowserUtils.waitFor(2);
+    }
+
 
 }
