@@ -5,7 +5,7 @@ formatter.feature({
   "keyword": "Feature"
 });
 formatter.scenario({
-  "name": "Available currencies",
+  "name": "Error message for not entering value",
   "description": "",
   "keyword": "Scenario",
   "tags": [
@@ -58,25 +58,21 @@ formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "following currencies should be available",
-  "rows": [
-    {},
-    {},
-    {},
-    {},
-    {},
-    {},
-    {},
-    {},
-    {},
-    {},
-    {},
-    {}
-  ],
+  "name": "user tries to calculate cost without entering a value",
+  "keyword": "When "
+});
+formatter.match({
+  "location": "com.zerobank.stepdefinitions.PurchaseForeignCurrencyStepDefinitions.user_tries_to_calculate_cost_without_entering_a_value()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "error message should be displayed",
   "keyword": "Then "
 });
 formatter.match({
-  "location": "com.zerobank.stepdefinitions.PurchaseForeignCurrencyStepDefinitions.following_currencies_should_be_available(java.util.List\u003cjava.lang.String\u003e)"
+  "location": "com.zerobank.stepdefinitions.PurchaseForeignCurrencyStepDefinitions.error_message_should_be_displayed()"
 });
 formatter.result({
   "status": "passed"

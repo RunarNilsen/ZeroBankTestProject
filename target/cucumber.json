@@ -3,11 +3,11 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2021-08-01T12:46:15.924Z",
+        "start_timestamp": "2021-08-01T14:02:45.198Z",
         "before": [
           {
             "result": {
-              "duration": 2816186000,
+              "duration": 2785654000,
               "status": "passed"
             },
             "match": {
@@ -15,14 +15,14 @@
             }
           }
         ],
-        "line": 3,
-        "name": "Available currencies",
+        "line": 33,
+        "name": "Error message for not entering value",
         "description": "",
-        "id": "purchase-foreign-currency;available-currencies",
+        "id": "purchase-foreign-currency;error-message-for-not-entering-value",
         "after": [
           {
             "result": {
-              "duration": 151139000,
+              "duration": 158057000,
               "status": "passed"
             },
             "match": {
@@ -35,10 +35,10 @@
         "steps": [
           {
             "result": {
-              "duration": 1157621000,
+              "duration": 1067470000,
               "status": "passed"
             },
-            "line": 4,
+            "line": 34,
             "name": "navigate login page",
             "match": {
               "location": "com.zerobank.stepdefinitions.LoginStepDefinitions.navigate_login_page()"
@@ -47,10 +47,10 @@
           },
           {
             "result": {
-              "duration": 1409920000,
+              "duration": 1364163000,
               "status": "passed"
             },
-            "line": 5,
+            "line": 35,
             "name": "the user is logged in",
             "match": {
               "location": "com.zerobank.stepdefinitions.LoginStepDefinitions.the_user_is_logged_in()"
@@ -59,10 +59,10 @@
           },
           {
             "result": {
-              "duration": 1424703000,
+              "duration": 1334419000,
               "status": "passed"
             },
-            "line": 6,
+            "line": 36,
             "name": "the user clicks on \"Pay Bills\" module",
             "match": {
               "arguments": [
@@ -77,10 +77,10 @@
           },
           {
             "result": {
-              "duration": 507201000,
+              "duration": 477818000,
               "status": "passed"
             },
-            "line": 7,
+            "line": 37,
             "name": "Navigate \"Purchase Foreign Currency\" tab",
             "match": {
               "arguments": [
@@ -95,76 +95,26 @@
           },
           {
             "result": {
-              "duration": 382798000,
+              "duration": 1039647000,
               "status": "passed"
             },
-            "line": 8,
-            "name": "following currencies should be available",
+            "line": 38,
+            "name": "user tries to calculate cost without entering a value",
             "match": {
-              "location": "com.zerobank.stepdefinitions.PurchaseForeignCurrencyStepDefinitions.following_currencies_should_be_available(java.util.List\u003cjava.lang.String\u003e)"
+              "location": "com.zerobank.stepdefinitions.PurchaseForeignCurrencyStepDefinitions.user_tries_to_calculate_cost_without_entering_a_value()"
             },
-            "rows": [
-              {
-                "cells": [
-                  "Australia (dollar)"
-                ]
-              },
-              {
-                "cells": [
-                  "Canada (dollar)"
-                ]
-              },
-              {
-                "cells": [
-                  "Switzerland (franc)"
-                ]
-              },
-              {
-                "cells": [
-                  "China (yuan)"
-                ]
-              },
-              {
-                "cells": [
-                  "Denmark (krone)"
-                ]
-              },
-              {
-                "cells": [
-                  "Eurozone (euro)"
-                ]
-              },
-              {
-                "cells": [
-                  "Great Britain (pound)"
-                ]
-              },
-              {
-                "cells": [
-                  "Japan (yen)"
-                ]
-              },
-              {
-                "cells": [
-                  "Mexico (peso)"
-                ]
-              },
-              {
-                "cells": [
-                  "Norway (krone)"
-                ]
-              },
-              {
-                "cells": [
-                  "New Zealand (dollar)"
-                ]
-              },
-              {
-                "cells": [
-                  "Singapore (dollar)"
-                ]
-              }
-            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 30593000,
+              "status": "passed"
+            },
+            "line": 39,
+            "name": "error message should be displayed",
+            "match": {
+              "location": "com.zerobank.stepdefinitions.PurchaseForeignCurrencyStepDefinitions.error_message_should_be_displayed()"
+            },
             "keyword": "Then "
           }
         ],
