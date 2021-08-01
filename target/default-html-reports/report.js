@@ -1,11 +1,11 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("file:src/test/resources/features/FindTransactions.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("file:src/test/resources/features/PurchaseForeignCurrency.feature");
 formatter.feature({
-  "name": "Find Transactions in Account Activity",
+  "name": "Purchase Foreign Currency",
   "description": "",
   "keyword": "Feature"
 });
 formatter.scenario({
-  "name": "Type",
+  "name": "Available currencies",
   "description": "",
   "keyword": "Scenario",
   "tags": [
@@ -15,7 +15,7 @@ formatter.scenario({
   ]
 });
 formatter.before({
-  "status": "skipped"
+  "status": "passed"
 });
 formatter.step({
   "name": "navigate login page",
@@ -25,7 +25,7 @@ formatter.match({
   "location": "com.zerobank.stepdefinitions.LoginStepDefinitions.navigate_login_page()"
 });
 formatter.result({
-  "status": "skipped"
+  "status": "passed"
 });
 formatter.step({
   "name": "the user is logged in",
@@ -35,93 +35,53 @@ formatter.match({
   "location": "com.zerobank.stepdefinitions.LoginStepDefinitions.the_user_is_logged_in()"
 });
 formatter.result({
-  "status": "skipped"
+  "status": "passed"
 });
 formatter.step({
-  "name": "the user accesses the Find Transactions tab",
+  "name": "the user clicks on \"Pay Bills\" module",
+  "keyword": "When "
+});
+formatter.match({
+  "location": "com.zerobank.stepdefinitions.AddNewPayeeStepDefinitions.the_user_clicks_on_module(java.lang.String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Navigate \"Purchase Foreign Currency\" tab",
   "keyword": "Given "
 });
 formatter.match({
-  "location": "com.zerobank.stepdefinitions.FindTransactionsStepDefinitions.theUserAccessesTheFindTransactionsTab()"
+  "location": "com.zerobank.stepdefinitions.AddNewPayeeStepDefinitions.navigate_tab(java.lang.String)"
 });
 formatter.result({
-  "status": "skipped"
+  "status": "passed"
 });
 formatter.step({
-  "name": "clicks search",
-  "keyword": "And "
+  "name": "following currencies should be available",
+  "rows": [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {}
+  ],
+  "keyword": "Then "
 });
 formatter.match({
-  "location": "com.zerobank.stepdefinitions.FindTransactionsStepDefinitions.clicksSearch()"
+  "location": "com.zerobank.stepdefinitions.PurchaseForeignCurrencyStepDefinitions.following_currencies_should_be_available(java.util.List\u003cjava.lang.String\u003e)"
 });
 formatter.result({
-  "status": "skipped"
-});
-formatter.step({
-  "name": "results table should show at least one result under \"Deposit\"",
-  "keyword": "Then "
-});
-formatter.match({});
-formatter.result({
-  "status": "undefined"
-});
-formatter.step({
-  "name": "results table should show at least one result under \"Withdrawal\"",
-  "keyword": "Then "
-});
-formatter.match({});
-formatter.result({
-  "status": "undefined"
-});
-formatter.step({
-  "name": "user selects type \"Deposit\"",
-  "keyword": "When "
-});
-formatter.match({});
-formatter.result({
-  "status": "undefined"
-});
-formatter.step({
-  "name": "results table should show at least one result under \"Deposit\"",
-  "keyword": "Then "
-});
-formatter.match({});
-formatter.result({
-  "status": "undefined"
-});
-formatter.step({
-  "name": "results table should show no result under \"Withdrawal\"",
-  "keyword": "But "
-});
-formatter.match({});
-formatter.result({
-  "status": "undefined"
-});
-formatter.step({
-  "name": "user selects type \"Withdrawal\"",
-  "keyword": "When "
-});
-formatter.match({});
-formatter.result({
-  "status": "undefined"
-});
-formatter.step({
-  "name": "results table should show at least one result under \"Withdrawal\"",
-  "keyword": "Then "
-});
-formatter.match({});
-formatter.result({
-  "status": "undefined"
-});
-formatter.step({
-  "name": "results table should show no result under \"Deposit\"",
-  "keyword": "But "
-});
-formatter.match({});
-formatter.result({
-  "status": "undefined"
+  "status": "passed"
 });
 formatter.after({
-  "status": "skipped"
+  "status": "passed"
 });
 });

@@ -3,27 +3,27 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2021-07-31T16:58:47.809Z",
+        "start_timestamp": "2021-08-01T12:46:15.924Z",
         "before": [
           {
             "result": {
-              "duration": 1031000,
-              "status": "skipped"
+              "duration": 2816186000,
+              "status": "passed"
             },
             "match": {
               "location": "com.zerobank.stepdefinitions.Hooks.setUp()"
             }
           }
         ],
-        "line": 42,
-        "name": "Type",
+        "line": 3,
+        "name": "Available currencies",
         "description": "",
-        "id": "find-transactions-in-account-activity;type",
+        "id": "purchase-foreign-currency;available-currencies",
         "after": [
           {
             "result": {
-              "duration": 36000,
-              "status": "skipped"
+              "duration": 151139000,
+              "status": "passed"
             },
             "match": {
               "location": "com.zerobank.stepdefinitions.Hooks.tearDown(io.cucumber.java.Scenario)"
@@ -35,10 +35,10 @@
         "steps": [
           {
             "result": {
-              "duration": 1674000,
-              "status": "skipped"
+              "duration": 1157621000,
+              "status": "passed"
             },
-            "line": 43,
+            "line": 4,
             "name": "navigate login page",
             "match": {
               "location": "com.zerobank.stepdefinitions.LoginStepDefinitions.navigate_login_page()"
@@ -47,10 +47,10 @@
           },
           {
             "result": {
-              "duration": 1096000,
-              "status": "skipped"
+              "duration": 1409920000,
+              "status": "passed"
             },
-            "line": 44,
+            "line": 5,
             "name": "the user is logged in",
             "match": {
               "location": "com.zerobank.stepdefinitions.LoginStepDefinitions.the_user_is_logged_in()"
@@ -59,99 +59,113 @@
           },
           {
             "result": {
-              "duration": 1009000,
-              "status": "skipped"
+              "duration": 1424703000,
+              "status": "passed"
             },
-            "line": 45,
-            "name": "the user accesses the Find Transactions tab",
+            "line": 6,
+            "name": "the user clicks on \"Pay Bills\" module",
             "match": {
-              "location": "com.zerobank.stepdefinitions.FindTransactionsStepDefinitions.theUserAccessesTheFindTransactionsTab()"
+              "arguments": [
+                {
+                  "val": "\"Pay Bills\"",
+                  "offset": 19
+                }
+              ],
+              "location": "com.zerobank.stepdefinitions.AddNewPayeeStepDefinitions.the_user_clicks_on_module(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 507201000,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "Navigate \"Purchase Foreign Currency\" tab",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Purchase Foreign Currency\"",
+                  "offset": 9
+                }
+              ],
+              "location": "com.zerobank.stepdefinitions.AddNewPayeeStepDefinitions.navigate_tab(java.lang.String)"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 933000,
-              "status": "skipped"
+              "duration": 382798000,
+              "status": "passed"
             },
-            "line": 46,
-            "name": "clicks search",
+            "line": 8,
+            "name": "following currencies should be available",
             "match": {
-              "location": "com.zerobank.stepdefinitions.FindTransactionsStepDefinitions.clicksSearch()"
+              "location": "com.zerobank.stepdefinitions.PurchaseForeignCurrencyStepDefinitions.following_currencies_should_be_available(java.util.List\u003cjava.lang.String\u003e)"
             },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "status": "undefined"
-            },
-            "line": 47,
-            "name": "results table should show at least one result under \"Deposit\"",
-            "match": {},
+            "rows": [
+              {
+                "cells": [
+                  "Australia (dollar)"
+                ]
+              },
+              {
+                "cells": [
+                  "Canada (dollar)"
+                ]
+              },
+              {
+                "cells": [
+                  "Switzerland (franc)"
+                ]
+              },
+              {
+                "cells": [
+                  "China (yuan)"
+                ]
+              },
+              {
+                "cells": [
+                  "Denmark (krone)"
+                ]
+              },
+              {
+                "cells": [
+                  "Eurozone (euro)"
+                ]
+              },
+              {
+                "cells": [
+                  "Great Britain (pound)"
+                ]
+              },
+              {
+                "cells": [
+                  "Japan (yen)"
+                ]
+              },
+              {
+                "cells": [
+                  "Mexico (peso)"
+                ]
+              },
+              {
+                "cells": [
+                  "Norway (krone)"
+                ]
+              },
+              {
+                "cells": [
+                  "New Zealand (dollar)"
+                ]
+              },
+              {
+                "cells": [
+                  "Singapore (dollar)"
+                ]
+              }
+            ],
             "keyword": "Then "
-          },
-          {
-            "result": {
-              "status": "undefined"
-            },
-            "line": 48,
-            "name": "results table should show at least one result under \"Withdrawal\"",
-            "match": {},
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "status": "undefined"
-            },
-            "line": 49,
-            "name": "user selects type \"Deposit\"",
-            "match": {},
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "status": "undefined"
-            },
-            "line": 50,
-            "name": "results table should show at least one result under \"Deposit\"",
-            "match": {},
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "status": "undefined"
-            },
-            "line": 51,
-            "name": "results table should show no result under \"Withdrawal\"",
-            "match": {},
-            "keyword": "But "
-          },
-          {
-            "result": {
-              "status": "undefined"
-            },
-            "line": 52,
-            "name": "user selects type \"Withdrawal\"",
-            "match": {},
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "status": "undefined"
-            },
-            "line": 53,
-            "name": "results table should show at least one result under \"Withdrawal\"",
-            "match": {},
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "status": "undefined"
-            },
-            "line": 54,
-            "name": "results table should show no result under \"Deposit\"",
-            "match": {},
-            "keyword": "But "
           }
         ],
         "tags": [
@@ -161,11 +175,11 @@
         ]
       }
     ],
-    "name": "Find Transactions in Account Activity",
+    "name": "Purchase Foreign Currency",
     "description": "",
-    "id": "find-transactions-in-account-activity",
+    "id": "purchase-foreign-currency",
     "keyword": "Feature",
-    "uri": "file:src/test/resources/features/FindTransactions.feature",
+    "uri": "file:src/test/resources/features/PurchaseForeignCurrency.feature",
     "tags": []
   }
 ]

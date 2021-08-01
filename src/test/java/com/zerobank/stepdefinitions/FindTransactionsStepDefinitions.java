@@ -3,10 +3,7 @@ package com.zerobank.stepdefinitions;
 import com.zerobank.pages.AccountActivityNavigationPage;
 import com.zerobank.pages.FindTransactionsPage;
 import com.zerobank.utilities.BrowserUtils;
-import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
+import io.cucumber.java.en.*;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 
@@ -85,20 +82,37 @@ public class FindTransactionsStepDefinitions {
 
     @Then("results table should show at least one result under {string}")
     public void results_table_should_show_at_least_one_result_under(String string) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        FindTransactionsPage transactionsPage = new FindTransactionsPage();
+        switch(string){
+            case "Deposit":
+                Assert.assertTrue("Check if the deposit size is grater than 0 :",transactionsPage.getTransactionsDeposit().size()>0);
+                break;
+            case  "Withdrawal":
+                Assert.assertTrue("Check if the Withdrawal size is grater than 0 :",transactionsPage.getTransactionsWithdrawal().size()>0);
+                break;
+        }
+
     }
 
     @When("user selects type {string}")
     public void user_selects_type(String string) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        FindTransactionsPage transactionsPage = new FindTransactionsPage();
+        transactionsPage.selectOptionFromDropDown(string);
     }
 
-    @Then("results table should show no result under {string}")
+    @But("results table should show no result under {string}")
     public void results_table_should_show_no_result_under(String string) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        FindTransactionsPage transactionsPage = new FindTransactionsPage();
+        switch(string){
+            case "Deposit":
+                System.out.println("transactionsPage.getTransactionsDeposit() = " + transactionsPage.getTransactionsDeposit());
+                Assert.assertEquals("Check if the deposit size is  0 : ",0,transactionsPage.getTransactionsDeposit().size());
+                break;
+            case  "Withdrawal":
+                System.out.println("transactionsPage.getTransactionsWithdrawal() = " + transactionsPage.getTransactionsWithdrawal());
+                Assert.assertEquals("Check if the Withdrawal size is 0 : ", 0, transactionsPage.getTransactionsWithdrawal().size());
+                break;
+        }
     }
 
 
