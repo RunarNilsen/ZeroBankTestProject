@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.text.ParseException;
@@ -44,6 +45,9 @@ public class FindTransactionsPage extends BasePage{
 
     @FindBy(css = "#filtered_transactions_for_account>table>tbody>tr:last-child>td")
     public WebElement lastDate;
+
+    @FindBy(id = "aa_type")
+    public WebElement typeDropDown;
 
    String tableLocatorAddress="#filtered_transactions_for_account>table>tbody>tr";
 
@@ -209,8 +213,59 @@ public class FindTransactionsPage extends BasePage{
         return true;
     }
 
+    public List<String> getTransactionsDeposit(){
+        /**
+         This method gets the transaction deposits that are placed third column of a table,
+         and stores them in a String List
+
+         Parameters:
+         Return: A String list that contains the deposits of transactions
+         */
+        List<String> depositList = new ArrayList<>();
+        int totalRowNumber = getRowsOfTableAsWebelement(tableLocatorAddress).size();
+        System.out.println("totalRowNumber = " + totalRowNumber);
+        for (int i=1; i<= totalRowNumber; i++) {
+            String deposit= Driver.get().findElement(By.cssSelector("#filtered_transactions_for_account>table>tbody>tr:nth-child("+i+")>td:nth-child(3)")).getText();
+            if (!deposit.equals("")){
+                depositList.add(deposit);
+            }
+        }
+        return depositList;
+    }
+
+    public List<String> getTransactionsWithdrawal(){
+        /**
+         This method gets the transaction withdrawal that are placed fourth column of a table,
+         and stores them in a String List
+
+         Parameters:
+         Return: A String list that contains the withdrawal of transactions
+         */
+        List<String> withdrawalList = new ArrayList<>();
+        int totalRowNumber = getRowsOfTableAsWebelement(tableLocatorAddress).size();
+        System.out.println("totalRowNumber = " + totalRowNumber);
+        for (int i=1; i<= totalRowNumber; i++) {
+            String withdrawal= Driver.get().findElement(By.cssSelector("#filtered_transactions_for_account>table>tbody>tr:nth-child("+i+")>td:nth-child(4)")).getText();
+            if (!withdrawal.equals("")){
+                withdrawalList.add(withdrawal);
+            }
+
+        }
+        return withdrawalList;
+    }
 
 
+    public void selectOptionFromDropDown(String option){
+        /**
+         This method gets an option from the dropdown menu and selects it
+
+         Parameters:
+         option: That represents the different options in the dropdown menu
+
+         */
+        Select select = new Select(typeDropDown);
+        select.selectByVisibleText(option);
+    }
 
 
 
