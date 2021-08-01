@@ -12,16 +12,22 @@ public class PurchaseForeignCurrencyPage extends BasePage{
     public Select select;
 
     public PurchaseForeignCurrencyPage(){
-
+        select = new Select(currencyDropdownMenu);
     }
 
     @FindBy(css = "#pc_currency")
     public WebElement currencyDropdownMenu;
 
+    @FindBy(css = "#pc_amount")
+    public WebElement amountBox;
+
+    @FindBy(css = "#pc_calculate_costs")
+    public WebElement calculateCostButton;
+
+
 
 
     public List<String> getForeignCurrencyList(){
-        select = new Select(currencyDropdownMenu);
         List<WebElement> dropdownMenuList = select.getOptions();
         List<String> actualCurrencyList = BrowserUtils.getElementsText(dropdownMenuList);
         return actualCurrencyList;
